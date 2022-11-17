@@ -1,11 +1,6 @@
 ﻿using NHibernate.Event;
 using NHibernate.Persister.Entity;
 using ProjetoPiloto.Shared.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoPiloto.Shared.Repository.ModelConfigBase
 {

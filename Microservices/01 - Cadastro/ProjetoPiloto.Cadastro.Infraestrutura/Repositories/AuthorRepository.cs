@@ -3,17 +3,12 @@ using NHibernate.Linq;
 using ProjetoPiloto.Cadastro.Application.Contracts.Persistance;
 using ProjetoPiloto.Cadastro.Domain.Entities;
 using ProjetoPiloto.Shared.Repository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoPiloto.Cadastro.Infraestrutura.Repositories
 {
     public class AuthorRepository : RepositoryBaseNHibernate<Author>, IAuthorRepository
     {
-        public AuthorRepository(ISession session) : base(session){}
+        public AuthorRepository(ISession session) : base(session) { }
 
         public async Task<long> AddAuthor(Author author)
         {

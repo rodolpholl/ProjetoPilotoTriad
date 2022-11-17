@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using NHibernate.Linq;
 using ProjetoPiloto.Cadastro.Application.Contracts.Persistance;
 using ProjetoPiloto.Cadastro.Application.Models;
 using ProjetoPiloto.Utils.Exceptions;

@@ -1,16 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Cfg.MappingSchema;
 using NHibernate.Dialect;
 using NHibernate.Event;
 using NHibernate.Mapping.ByCode;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoPiloto.Shared.Repository.ModelConfigBase
 {
@@ -21,7 +15,7 @@ namespace ProjetoPiloto.Shared.Repository.ModelConfigBase
             //TODO: Substituir pelo componente de Secret Voult
             string connectionString = configuration.GetSection("DatabaseConfig:ConnectionString").Value;
 
-       
+
             var mapper = new ModelMapper();
             mapper.AddMapping((IConformistHoldersProvider)typeof(RegisterServiceInfrastructureNHibernateRepository).Assembly.ExportedTypes);
             HbmMapping domainMapping = mapper.CompileMappingForAllExplicitlyAddedEntities();

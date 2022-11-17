@@ -2,11 +2,6 @@
 using NHibernate.Mapping.ByCode;
 using NHibernate.Mapping.ByCode.Conformist;
 using ProjetoPiloto.Shared.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoPiloto.Shared.Repository.ModelConfigBase.Mapping
 {
@@ -59,7 +54,7 @@ namespace ProjetoPiloto.Shared.Repository.ModelConfigBase.Mapping
                 x.Generated(PropertyGeneration.Insert);
                 x.Insert(true);
                 x.NotNullable(true);
-             
+
             });
 
 
