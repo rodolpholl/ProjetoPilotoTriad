@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Session\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\ProjetoPiloto.Shared.Repository\ProjetoPiloto.Shared.Repository.csproj" />
+    <ProjectReference Include="..\..\..\Shared\ProjetoPiloto.Shared\ProjetoPiloto.Shared.csproj" />
+    <ProjectReference Include="..\..\..\Shared\ProjetoPiloto.Utils\ProjetoPiloto.Utils.csproj" />
+    <ProjectReference Include="..\ProjetoPiloto.Cadastro.Application\ProjetoPiloto.Cadastro.Application.csproj" />
+    <ProjectReference Include="..\ProjetoPiloto.Cadastro.Domain\ProjetoPiloto.Cadastro.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

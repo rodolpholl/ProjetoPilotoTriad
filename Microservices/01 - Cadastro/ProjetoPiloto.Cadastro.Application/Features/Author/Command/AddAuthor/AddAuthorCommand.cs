@@ -1,6 +1,8 @@
-﻿namespace ProjetoPiloto.Shared.Interfaces
+﻿using MediatR;
+
+namespace ProjetoPiloto.Cadastro.Application.Features.Author.Command.AddAuthor
 {
-    public interface IAuthor : IEntityBase
+    public class AddAuthorCommand : IRequest<long>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -4,8 +4,8 @@ namespace ProjetoPiloto.Shared
 {
     public class EntityBase : IEntityBase
     {
-        public long Id { get; set; }
-        public DateTime UpdateDateTime { get; set; }
-        public DateTime CreateDateTime { get; set; }
+        public virtual long Id { get; set; }
+        public virtual DateTime UpdateDateTime { get; set; }
+        public virtual DateTime CreateDateTime { get; set; }
     }
 }
