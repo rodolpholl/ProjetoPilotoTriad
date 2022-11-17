@@ -1,6 +1,6 @@
 ﻿namespace ProjetoPiloto.Shared.Interfaces
 {
-    public  interface IBook : IEntityBase
+    public interface IBook : IEntityBase
     {
         public string Title { get; set; }
         public string ISBN { get; set; }

@@ -1,11 +1,6 @@
 ﻿using NHibernate;
 using ProjetoPiloto.Shared.Interfaces;
 using ProjetoPiloto.Shared.Repository.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoPiloto.Shared.Repository
 {
@@ -75,7 +70,7 @@ namespace ProjetoPiloto.Shared.Repository
         {
             await _session.DeleteAsync(entity);
         }
-                
+
 
         public virtual async Task Rollback()
         {

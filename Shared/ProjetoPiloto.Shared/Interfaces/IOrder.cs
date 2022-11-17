@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjetoPiloto.Shared.Interfaces
+﻿namespace ProjetoPiloto.Shared.Interfaces
 {
     public interface IOrder : IEntityBase
     {
@@ -14,7 +8,7 @@ namespace ProjetoPiloto.Shared.Interfaces
         public string ShipAddress { get; set; }
         public string ShipCity { get; set; }
         public string ShipState { get; set; }
-        public string ShipZipCode{ get; set; }
+        public string ShipZipCode { get; set; }
         public decimal? ShipCost { get; set; }
         public decimal TotalRetail { get; set; }
 
