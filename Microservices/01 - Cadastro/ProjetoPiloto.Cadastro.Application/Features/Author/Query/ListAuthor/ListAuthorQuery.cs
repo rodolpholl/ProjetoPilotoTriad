@@ -7,5 +7,11 @@ namespace ProjetoPiloto.Cadastro.Application.Features.Author.Query.ListAuthor
     {
         public int Index { get; set; }
         public int Count { get; set; }
+
+        public ListAuthorQuery(int index, int count)
+        {
+            Index = index;
+            Count = count;
+        }
     }
 }

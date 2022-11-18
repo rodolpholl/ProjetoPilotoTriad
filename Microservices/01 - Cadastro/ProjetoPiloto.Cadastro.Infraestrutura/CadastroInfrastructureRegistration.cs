@@ -1,18 +1,21 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProjetoPiloto.Cadastro.Application.Contracts.Persistance;
+using ProjetoPiloto.Cadastro.Domain.Entities;
+using ProjetoPiloto.Cadastro.Infraestrutura.ModelMap;
 using ProjetoPiloto.Cadastro.Infraestrutura.Repositories;
 using ProjetoPiloto.Shared.Repository.ModelConfigBase;
+using System.Reflection;
 
 namespace ProjetoPiloto.Cadastro.Infraestrutura
 {
     public static class CadastroInfrastructureRegistration
     {
-        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration, Assembly infrastructureAssembly)
         {
 
             //Configuire Database Connection
-            services.AddNHibernate(configuration);
+            services.AddNHibernate(configuration, infrastructureAssembly);
 
             //Register Repositories
             services.AddScoped<IAuthorRepository, AuthorRepository>();

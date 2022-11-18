@@ -15,7 +15,6 @@ namespace ProjetoPiloto.Shared.Repository.ModelConfigBase.Mapping
             {
                 x.Generator(Generators.Increment);
                 x.Type(NHibernateUtil.Int64);
-                x.Column("Id");
                 x.UnsavedValue(0);
             });
 
@@ -43,7 +42,6 @@ namespace ProjetoPiloto.Shared.Repository.ModelConfigBase.Mapping
             Property(b => b.UpdateDateTime, x =>
             {
                 x.Type(NHibernateUtil.DateTime);
-                x.Generated(PropertyGeneration.Always);
                 x.NotNullable(true);
             });
 
@@ -51,15 +49,11 @@ namespace ProjetoPiloto.Shared.Repository.ModelConfigBase.Mapping
             {
                 x.Update(false);
                 x.Type(NHibernateUtil.DateTime);
-                x.Generated(PropertyGeneration.Insert);
-                x.Insert(true);
                 x.NotNullable(true);
 
             });
 
-
-            Table("Authors");
-
+            Table("Author");
 
         }
     }

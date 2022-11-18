@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoPiloto.Shared.Reposi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoPiloto.Utils", "Shared\ProjetoPiloto.Utils\ProjetoPiloto.Utils.csproj", "{FEEFBF92-C6B3-4D43-9579-B29B023BFB52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoPiloto.Cadastro.Application", "Microservices\01 - Cadastro\ProjetoPiloto.Cadastro.Application\ProjetoPiloto.Cadastro.Application.csproj", "{BF47E0CC-1BDA-450C-BBD7-EC314AD2249A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoPiloto.Cadastro.Application", "Microservices\01 - Cadastro\ProjetoPiloto.Cadastro.Application\ProjetoPiloto.Cadastro.Application.csproj", "{BF47E0CC-1BDA-450C-BBD7-EC314AD2249A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoPiloto.Cadastro.Infraestrutura", "Microservices\01 - Cadastro\ProjetoPiloto.Cadastro.Infraestrutura\ProjetoPiloto.Cadastro.Infraestrutura.csproj", "{8C01E874-4EBD-4389-BF6D-545667164332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoPiloto.Cadastro.Infraestrutura", "Microservices\01 - Cadastro\ProjetoPiloto.Cadastro.Infraestrutura\ProjetoPiloto.Cadastro.Infraestrutura.csproj", "{8C01E874-4EBD-4389-BF6D-545667164332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoPiloto.Cadastro.API", "Microservices\01 - Cadastro\ProjetoPiloto.Cadastro.API\ProjetoPiloto.Cadastro.API.csproj", "{EA3FD20E-F511-4639-A5A9-7882B1FCD67E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{8C01E874-4EBD-4389-BF6D-545667164332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C01E874-4EBD-4389-BF6D-545667164332}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C01E874-4EBD-4389-BF6D-545667164332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3FD20E-F511-4639-A5A9-7882B1FCD67E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3FD20E-F511-4639-A5A9-7882B1FCD67E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3FD20E-F511-4639-A5A9-7882B1FCD67E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3FD20E-F511-4639-A5A9-7882B1FCD67E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{FEEFBF92-C6B3-4D43-9579-B29B023BFB52} = {CA004C55-37B1-402F-996A-621BC663668C}
 		{BF47E0CC-1BDA-450C-BBD7-EC314AD2249A} = {FF8B82B2-F7B6-41CE-B1C2-29D31567EE17}
 		{8C01E874-4EBD-4389-BF6D-545667164332} = {FF8B82B2-F7B6-41CE-B1C2-29D31567EE17}
+		{EA3FD20E-F511-4639-A5A9-7882B1FCD67E} = {FF8B82B2-F7B6-41CE-B1C2-29D31567EE17}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B8D04680-6368-4DA6-B947-F4D9826ECC7B}

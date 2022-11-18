@@ -1,13 +1,12 @@
 ﻿using NHibernate.Mapping.ByCode.Conformist;
 using ProjetoPiloto.Cadastro.Domain.Entities;
+using ProjetoPiloto.Shared.Repository.ModelConfigBase.Mapping;
 
 namespace ProjetoPiloto.Cadastro.Infraestrutura.ModelMap
 {
-    public class AuthorMap : ClassMapping<Author>
+    public class AuthorMap : AuthorMapBase<Author>
     {
-        public AuthorMap()
-        {
-
-        }
+        public AuthorMap() : base() { }
+        
     }
 }

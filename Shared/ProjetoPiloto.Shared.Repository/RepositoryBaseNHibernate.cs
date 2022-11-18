@@ -20,7 +20,7 @@ namespace ProjetoPiloto.Shared.Repository
 
         public async Task Add(TEntity entity)
         {
-            bool openTransaction = !(_transaction == null);
+            bool openTransaction = (_transaction == null);
 
             if (openTransaction)
             {
@@ -84,14 +84,14 @@ namespace ProjetoPiloto.Shared.Repository
 
         public async Task Update(TEntity entity)
         {
-            bool openTransaction = !(_transaction == null);
+            bool openTransaction = (_transaction == null || !_transaction.IsActive);
 
             if (openTransaction)
             {
                 _transaction = _session.BeginTransaction();
             }
-
-            await _session.UpdateAsync(entity);
+            await _session.MergeAsync(entity);
+            //await _session.UpdateAsync(entity);
 
             if (openTransaction)
             {

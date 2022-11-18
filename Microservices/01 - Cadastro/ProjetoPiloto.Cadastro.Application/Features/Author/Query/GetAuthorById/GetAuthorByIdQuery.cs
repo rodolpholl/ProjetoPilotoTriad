@@ -6,5 +6,10 @@ namespace ProjetoPiloto.Cadastro.Application.Features.Author.Query.GetAuthorById
     public class GetAuthorByIdQuery : IRequest<AuthorModel>
     {
         public long Id { get; set; }
+
+        public GetAuthorByIdQuery(long id)
+        {
+            Id = id;
+        }
     }
 }

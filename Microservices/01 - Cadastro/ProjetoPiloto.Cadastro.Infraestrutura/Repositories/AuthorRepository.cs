@@ -32,7 +32,6 @@ namespace ProjetoPiloto.Cadastro.Infraestrutura.Repositories
         {
             await Update(author);
             return author.Id;
-
         }
     }
 }
