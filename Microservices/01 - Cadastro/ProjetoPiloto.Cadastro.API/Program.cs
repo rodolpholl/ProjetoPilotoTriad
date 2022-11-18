@@ -6,7 +6,6 @@ using ProjetoPiloto.Cadastro.Application.Features.Author.Command.AddAuthor;
 using ProjetoPiloto.Cadastro.Application.Features.Author.Command.UpdateAuthor;
 using ProjetoPiloto.Cadastro.Application.Features.Author.Query.GetAuthorById;
 using ProjetoPiloto.Cadastro.Application.Features.Author.Query.ListAuthor;
-using ProjetoPiloto.Cadastro.Application.Models;
 using ProjetoPiloto.Cadastro.Infraestrutura;
 using ProjetoPiloto.Cadastro.Infraestrutura.ModelMap;
 using Serilog;
@@ -48,22 +47,19 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
-
-
 #region Endpoints
 
 app.MapGet("/authors/{page}/{size}", async (int page, int size, IMediator mediator, IMapper mapper) =>
 {
-    
+
     try
     {
         ListAuthorQuery query = new ListAuthorQuery(page, size);
-
         var result = await mediator.Send(query);
 
         return Results.Ok(mapper.Map<List<AuthorDTO>>(result));
     }
-    catch(Exception ex)
+    catch (Exception ex)
     {
         logger.Error(ex.Message);
         return Results.BadRequest(ex.Message);
@@ -76,10 +72,7 @@ app.MapPost("/authors", async (AuthorDTO authorDTO, IMediator mediator, IMapper 
 {
     try
     {
-
-
         var command = mapper.Map<AddAuthorCommand>(authorDTO);
-
         var result = await mediator.Send(command);
 
         return Results.Ok(result);
@@ -97,9 +90,7 @@ app.MapPut("/authors", async (AuthorDTO authorDTO, IMediator mediator, IMapper m
 {
     try
     {
-
         var command = mapper.Map<UpdateAuthorCommand>(authorDTO);
-
         var result = await mediator.Send(command);
 
         return Results.Ok(result);
@@ -116,10 +107,7 @@ app.MapGet("/authors/{Id}", async (long Id, IMediator mediator, IMapper mapper) 
 {
     try
     {
-
         var query = new GetAuthorByIdQuery(Id);
-        
-
         var result = await mediator.Send(query);
 
         return Results.Ok(mapper.Map<AuthorDTO>(result));

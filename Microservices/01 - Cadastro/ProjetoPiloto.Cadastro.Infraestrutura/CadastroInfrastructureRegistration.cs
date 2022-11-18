@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ProjetoPiloto.Cadastro.Application.Contracts.Persistance;
-using ProjetoPiloto.Cadastro.Domain.Entities;
-using ProjetoPiloto.Cadastro.Infraestrutura.ModelMap;
 using ProjetoPiloto.Cadastro.Infraestrutura.Repositories;
 using ProjetoPiloto.Shared.Repository.ModelConfigBase;
 using System.Reflection;

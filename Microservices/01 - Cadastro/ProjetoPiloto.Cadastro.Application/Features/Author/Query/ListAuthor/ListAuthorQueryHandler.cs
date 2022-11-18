@@ -23,7 +23,7 @@ namespace ProjetoPiloto.Cadastro.Application.Features.Author.Query.ListAuthor
         {
             try
             {
-                var listAuthors = await _repository.ListAuthor(request.Index-1, request.Count);
+                var listAuthors = await _repository.ListAuthor(request.Index - 1, request.Count);
                 var result = _mapper.Map<List<AuthorModel>>(listAuthors);
                 return result;
             }

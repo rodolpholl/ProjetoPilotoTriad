@@ -5,7 +5,6 @@ using NHibernate.Cfg.MappingSchema;
 using NHibernate.Dialect;
 using NHibernate.Event;
 using NHibernate.Mapping.ByCode;
-using NHibernate.Tool.hbm2ddl;
 using System.Reflection;
 
 namespace ProjetoPiloto.Shared.Repository.ModelConfigBase
@@ -22,7 +21,7 @@ namespace ProjetoPiloto.Shared.Repository.ModelConfigBase
             HbmMapping domainMapping = mapper.CompileMappingForAllExplicitlyAddedEntities();
 
 
-           
+
 
 
 
@@ -38,16 +37,16 @@ namespace ProjetoPiloto.Shared.Repository.ModelConfigBase
                 c.LogSqlInConsole = true;
             });
             dbConfiguration.AddMapping(domainMapping);
-           
+
 
             //Add Audit Event Listeners to update createtime and updatetime
             dbConfiguration.AppendListeners(ListenerType.PreInsert, new IPreInsertEventListener[] { new AuditEventListeners() });
             dbConfiguration.AppendListeners(ListenerType.PreUpdate, new IPreUpdateEventListener[] { new AuditEventListeners() });
-        
+
 
             var sessionFactory = dbConfiguration.BuildSessionFactory();
 
-            
+
 
             services.AddSingleton(sessionFactory);
             services.AddScoped(factory => sessionFactory.OpenSession());
