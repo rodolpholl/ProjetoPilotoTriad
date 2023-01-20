@@ -1,0 +1,83 @@
+version: '3.4'
+
+services:
+
+
+  #RabbitMQ
+  rabbitmq:
+    ports:
+      - 5672:5672
+      - 15672:15672
+    restart: unless-stopped
+  
+  #Vault
+  vault:
+    restart: always
+    command: [ 'vault', 'server', '-dev', '-dev-listen-address=127.0.0.1:8200']
+    environment:
+      VAULT_DEV_ROOT_TOKEN_ID: "some-root-token"
+    ports:
+      - "8200:8200"
+    cap_add:
+      - IPC_LOCK
+    networks:
+        - projeto-piloto
+
+  #cache
+  cachedb:
+    container_name: cachedb
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    
+  #postgresql
+  postgresql:
+    image: postgres:alpine
+    container_name: postgresql_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-projetopiloto}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-projetopiloto1234}
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - projeto-piloto
+    restart: unless-stopped
+
+  #pgadmin
+  #pgadmin:
+  #  container_name: pgadmin
+  #  environment:
+  #    PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-user@projetopiloto.com}
+  #    PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-projetopiloto1234}
+  #    PGADMIN_CONFIG_SERVER_MODE: 'False'
+  #  volumes:
+  #    - pgadmin:/var/lib/pgadmin
+  #  ports:
+  #    - "${PGADMIN_PORT:-82}:80"
+  #  restart: unless-stopped
+  #  networks:
+  #    - projeto-piloto
+  #  depends_on:
+  #    - postgresql
+
+
+
+  #Application Services
+  projetopiloto.cadastro.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "80"
+      - "443"
+    restart: always
+    depends_on:
+      - postgresql
+      - vault
+      - rabbitmq
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

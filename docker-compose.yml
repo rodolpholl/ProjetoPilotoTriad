@@ -1,0 +1,42 @@
+# docker-compose -f docker-compose.yml -f docker-compose.override.yml down; docker-compose -f docker-compose.yml -f docker-compose.override.yml up -d rabbitmq cachedb
+
+version: '3.4'
+
+services:
+
+  #RabbitMQ
+  rabbitmq:
+    image: rabbitmq:3.11-management
+
+  #Vault
+  vault:
+    image: vault:latest
+  
+  #Cache  
+  cachedb:
+    image: redis:alpine
+
+  #postgresql
+  postgresql:
+       image: postgres:latest
+
+  ##pgadmin  
+  #pgadmin:
+  #  image: dpage/pgadmin4:latest
+
+
+
+  #application services
+  projetopiloto.cadastro.api:
+    image: ${DOCKER_REGISTRY-}projetopilotocadastroapi
+    build:
+      context: .
+      dockerfile: Microservices/01 - Cadastro/ProjetoPiloto.Cadastro.API/Dockerfile
+      
+networks:
+  projeto-piloto:
+    driver: bridge
+
+volumes:
+  postgres:
+  pgadmin:

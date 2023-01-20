@@ -21,11 +21,6 @@ namespace ProjetoPiloto.Shared.Repository.ModelConfigBase
             HbmMapping domainMapping = mapper.CompileMappingForAllExplicitlyAddedEntities();
 
 
-
-
-
-
-
             var dbConfiguration = new Configuration();
             dbConfiguration.DataBaseIntegration(c =>
             {

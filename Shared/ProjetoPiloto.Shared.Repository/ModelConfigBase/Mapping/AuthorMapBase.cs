@@ -10,7 +10,6 @@ namespace ProjetoPiloto.Shared.Repository.ModelConfigBase.Mapping
         public AuthorMapBase()
         {
 
-
             Id(x => x.Id, x =>
             {
                 x.Generator(Generators.Increment);

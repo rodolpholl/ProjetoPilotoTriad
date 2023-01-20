@@ -10,13 +10,13 @@ namespace ProjetoPiloto.Cadastro.Application.Features.Author.Query.ListAuthor
                 .GreaterThan(0)
                 .WithMessage("Page mnust be Greater than 1")
                 .NotNull()
-                .WithMessage("Page must br informed");
+                .WithMessage("Page must be informed");
 
             RuleFor(x => x.Count)
                 .GreaterThan(0)
                 .WithMessage("Size must be Greater than 1")
                 .NotNull()
-                .WithMessage("Size must br informed");
+                .WithMessage("Size must be informed");
         }
     }
 }

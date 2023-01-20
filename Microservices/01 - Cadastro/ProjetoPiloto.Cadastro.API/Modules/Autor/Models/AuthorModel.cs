@@ -1,6 +1,6 @@
-﻿namespace ProjetoPiloto.Cadastro.API.Models
+﻿namespace ProjetoPiloto.Cadastro.API.Modules.Cadastro.Models
 {
-    public class AuthorDTO
+    public class AuthorModel
     {
         public long? Id { get; set; }
         public string FirstName { get; set; }
