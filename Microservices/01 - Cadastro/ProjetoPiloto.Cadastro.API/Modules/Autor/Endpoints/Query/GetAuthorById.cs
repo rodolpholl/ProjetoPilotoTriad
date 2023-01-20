@@ -5,7 +5,7 @@ using ProjetoPiloto.Cadastro.Application.Features.Author.Query.GetAuthorById;
 
 namespace ProjetoPiloto.Cadastro.API.Modules.Cadastro.Endpoints.Query
 {
-    public static class GetAuthor
+    public static class GetAuthorById
     {
         public static IEndpointRouteBuilder MapGetAuthor(this IEndpointRouteBuilder endpoint, Serilog.ILogger logger)
         {
