@@ -8,6 +8,7 @@ using ProjetoPiloto.Cadastro.Application.Features.Author.Query.ListAuthor;
 using ProjetoPiloto.Cadastro.Infraestrutura;
 using ProjetoPiloto.Cadastro.Infraestrutura.ModelMap;
 using ProjetoPiloto.Utils.Extensions;
+using ProjetoPiloto.Utils.Extensions.CORS;
 using ProjetoPiloto.Utils.Extensions.Modules;
 using ProjetoPiloto.Utils.Vault;
 using Serilog;
@@ -38,6 +39,7 @@ config.AddEnvironmentVariables(prefix: "VAULT_");
 
 builder.Services.RegisterModules(Assembly.GetExecutingAssembly(), config);
 
+builder.Services.AddMicroserviceCORS();
 
 
 var app = builder.Build();
@@ -70,6 +72,8 @@ app.UseAuthentication()
     .UseAuthorization();
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.Run();
 
